@@ -48,3 +48,8 @@ Vei2 RectI::GetCenter() const
 {
 	return Vei2( (left + right) / 2,(top + bottom) / 2 );
 }
+
+bool RectI::Contains(const Vei2& point) const
+{
+	return point.x >= left && point.x < right && point.y >= top && point.y < bottom;
+}
