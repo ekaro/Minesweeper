@@ -28,7 +28,7 @@ private:
 		int nNeighborMemes = -1;
 	};
 public:
-	MemeField(int nMemes);
+	MemeField(const Vei2& center, int nMemes);
 	void Draw(Graphics& gfx) const;
 	RectI GetRect() const;
 	void OnRevealClick(const Vei2& screenPos);
@@ -42,5 +42,6 @@ private:
 	static constexpr int width = 20;
 	static constexpr int height = 16;
 	bool isMemed = false;
+	Vei2 topLeft;
 	Tile field[width * height];
 };
