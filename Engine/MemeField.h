@@ -21,6 +21,7 @@ private:
 		bool IsRevealed() const;
 		void ToggleFlag();
 		bool IsFlagged() const;
+		bool HasNoNeighborMemes()  const;
 		void SetNeighborMemeCount(int memeCount);
 	private:
 		State state = State::Hidden;
@@ -34,6 +35,7 @@ public:
 	void OnRevealClick(const Vei2& screenPos);
 	void OnFlagClick(const Vei2& screenPos);
 private:
+	void RevealTile(const Vei2& gridPos);
 	Tile& TileAt(const Vei2& gridPos);
 	const Tile& TileAt(const Vei2& gridPos) const;
 	Vei2 ScreenToGrid(const Vei2& screenPos);
